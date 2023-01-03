@@ -8,9 +8,9 @@ For Example:
 
 Pick instance class at [here](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html)
 
-DB Identifier can find at !
+DB Identifier can find at
 
-[image](./images/dbidentifier.png)
+![image](./images/dbidentifier.png)
 
 ## Reference
 Follow [Modify DB instance command](https://docs.aws.amazon.com/cli/latest/reference/rds/modify-db-instance.html)
