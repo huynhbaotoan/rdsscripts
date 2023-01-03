@@ -33,6 +33,8 @@ then
 fi
 
 start=`date +%s`
+startDate=$(date -j -f %s $start +%Y-%m-%dT%H:%M:%S%z)
+echo $startDate
 while [ $NEW_DBINSTANCE_CLASS !=  "$currentDBInstanceClass" ]
 do
     sleep 5
@@ -41,3 +43,13 @@ do
 done
 end=`date +%s`
 echo "completely scale RDS $((end-start))"
+
+echo "list events"
+endDate=$(date -j -f %s $end +%Y-%m-%dT%H:%M:%S%z)
+echo $endDate
+aws rds describe-events \
+    --source-identifier $DB_INSTANCE_IDENTIFIER \
+    --source-type db-instance \
+    --start-time $startDate \
+    --end-time $endDate \
+    --query 'Events[*].[Message,Date]' --output table
