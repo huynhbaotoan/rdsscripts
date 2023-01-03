@@ -14,3 +14,8 @@ DB Identifier can find at
 
 ## Reference
 Follow [Modify DB instance command](https://docs.aws.amazon.com/cli/latest/reference/rds/modify-db-instance.html)
+
+## Downtime
+
+The duration of downtime (not Multi-AZ instance) can be in this period:
+![downtime](./images/describe-events.png)
